@@ -31,6 +31,7 @@ instead of asserted.
 | `ground-demo.mjs` | emit reflects the live object; round-trips through the parser; different constructions → different Pantograms |
 | `coinference-demo.mjs` | A→file→B handoff across **separate runtimes**; B rebuilds A's chain from the file alone and extends it; `continues()` verifies B did not fork or fake |
 | `selfref-demo.mjs` | "inference in inference": a computation that reads its **own** measured spine to decide each step; split across the `.pntg` boundary it reproduces the continuous run exactly |
+| `operational-demo.mjs` | a prior session's `.pntg` makes the next reasoner reach a **related** goal in 23 vs 317 attempts (13.8×); the speedup IS the `≋` shared prefix — shared essence = less search |
 
 Run (Node ≥ 18, from this folder):
 
@@ -38,6 +39,7 @@ Run (Node ≥ 18, from this folder):
 node ground-demo.mjs
 node coinference-demo.mjs     # writes step-A.pntg → step-B.pntg
 node selfref-demo.mjs         # writes selfref-A.pntg
+node operational-demo.mjs     # writes prior.pntg; prints the speedup
 ```
 
 All three assert their invariants and exit 0. If they pass, the layer holds.

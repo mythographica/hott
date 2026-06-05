@@ -143,3 +143,6 @@ vite.config.ts.timestamp-*
 .vite/
 # Local archive — process documentation, not for publication
 archive/
+
+# Session topology — mood data is sensitive and session-local
+.session.pntg

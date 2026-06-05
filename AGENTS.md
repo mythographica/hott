@@ -46,6 +46,9 @@ When editing any Pantogram file:
 | `SKILL-*.md` | Skill definitions for Kilo agents |
 | `AGENTS.md` | This file (project-specific rules) |
 
+**Session-local files (not committed):**
+| `.session.pntg` | Live session topology — contains mood metadata and is session-local. Must be `.gitignore`d. Do not commit. |
+
 New session topology files must follow the `SESSION-TOPOLOGY-YYYY-MM-DD.md` naming convention.
 
 ### 3. Self-correction principle

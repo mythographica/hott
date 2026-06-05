@@ -1,0 +1,1 @@
+◎ ⊸ ⟨Act1⟩ ⟨{"i":1}⟩ → ⟨Act2⟩ ⟨{"i":2}⟩ → ⟨Reflect3⟩ ⟨{"i":3}⟩ → ⟨Act4⟩ ⟨{"i":4}⟩ ⟨rule:COUNT(Act)>=2*(COUNT(Reflect)+1)?Reflect:Act⟩ ⊙
