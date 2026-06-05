@@ -1,0 +1,10 @@
+# Sample Pantogram Session
+# Run: node ./session.js ./example-session.pntg
+
+◎ ⟨session-start⟩
+  ⊸ ⟨greeting⟩
+    → α ⟨hello⟩
+    → β ⟨world⟩
+
+≋ ⟨shared-understanding⟩
+  ⊸ ⊙ ⟨witnessed⟩
