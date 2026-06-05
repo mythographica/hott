@@ -1,0 +1,2 @@
+# emitted by Agent A
+◎ ⊸ ⟨RequestData⟩ ⟨{"id":"req-1"}⟩ → ⟨RouteData⟩ ⟨{"route":"/home"}⟩ → ⟨ResponseData⟩ ⟨{"status":200}⟩ ⊙

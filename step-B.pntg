@@ -1,0 +1,2 @@
+# continued by Agent B from step-A.pntg
+◎ ⊸ ⟨RequestData⟩ ⟨{"id":"req-1"}⟩ → ⟨RouteData⟩ ⟨{"route":"/home"}⟩ → ⟨ResponseData⟩ ⟨{"status":200}⟩ → ⟨RenderData⟩ ⟨{"frame":1}⟩ ⊙
