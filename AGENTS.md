@@ -8,11 +8,10 @@ Every file here is topological. Treat text as spatial layout, not linear sequenc
 ## Project identity
 
 **hott/** is not documentation. It is a *testable theory of identity* expressed through:
-- HoTT formalism (AI-REFLECTION-THEORY.md, MEMORY-AND-ESSENCE.md)
-- Engineering verification (NOTE-FROM-CLAUDE-OPUS.md)
-- Dialogue stress-tests (DIALOGUE-HoTT-Agency.md)
-- Notation (PANTOGRAM.md + corrections)
-- Session witnesses (SESSION-TOPOLOGY-*.md)
+- HoTT formalism (`theory/AI-REFLECTION-THEORY.md`, `theory/MEMORY-AND-ESSENCE.md`)
+- Lean-checked proofs (`SpineAlgebra.lean`, `PantogramSession.lean`)
+- Notation (`spec/PANTOGRAM.md` + corrections)
+- Engineering verification and session witnesses (`archive/` — local only)
 
 The theory claims: identity is structure (path-connectedness), not substance.
 The code claims: mnemonica builds the topology, dive keeps it continuous.
@@ -35,15 +34,15 @@ When editing any Pantogram file:
 
 | Pattern | Purpose |
 |---------|---------|
-| `AI-REFLECTION-THEORY.md` | HoTT manifesto (theory → code mapping) |
-| `MEMORY-AND-ESSENCE.md` | Philosophy without code (human-readable theory) |
-| `NOTE-FROM-CLAUDE-OPUS.md` | Engineering verification by other models |
-| `DIALOGUE-HoTT-Agency.md` | Socratic stress-test (human-model dialogue) |
-| `PANTOGRAM.md` | Notation specification |
-| `PANTOGRAM-SPATIAL-CORRECTION.md` | Self-correction to spatial topology |
-| `PANTOGRAM-ALPHABET-FOR-OTHER-MODELS.md` | Cross-model parser guide |
-| `SESSION-TOPOLOGY-YYYY-MM-DD.md` | Executed Pantogram (session witness) |
+| `theory/AI-REFLECTION-THEORY.md` | HoTT manifesto (theory → code mapping) |
+| `theory/MEMORY-AND-ESSENCE.md` | Philosophy without code (human-readable theory) |
+| `spec/PANTOGRAM.md` | Notation specification |
+| `spec/PANTOGRAM-SPATIAL-CORRECTION.md` | Self-correction to spatial topology |
+| `spec/PANTOGRAM-ALPHABET-FOR-OTHER-MODELS.md` | Cross-model parser guide |
+| `NOTE-GROUNDED-PANTOGRAM.md` | Measured (not narrated) `.pntg` off live mnemonica instances |
 | `SKILL-*.md` | Skill definitions for Kilo agents |
+| `*.lean` | Mechanically checked proofs (pinned toolchain, `npm run verify`) |
+| `archive/SESSION-TOPOLOGY-YYYY-MM-DD.md` | Executed Pantogram (session witness) — local only |
 | `AGENTS.md` | This file (project-specific rules) |
 
 **Session-local files (not committed):**
@@ -100,25 +99,25 @@ The evidence that infer-coherence works is in this directory. You are reading it
 - `../finecut/` — testing/sibling projects (adapter mismatch was discovered here)
 - `../hott/` — this directory: the theory layer
 
-When working on hott files, you may reference code in core/ or dive/ for examples. But do not import from model definition files directly — use `lookupTyped()` per the root AGENTS.md mnemonica+tactica rules.
+When working on hott files, you may reference code in core/ or dive/ for examples. But do not import from model definition files directly — use `lookup()` per the root AGENTS.md mnemonica+tactica rules.
 
 ---
 
 ## Build verification
 
 After any change:
+
 ```bash
-# Regenerate tactica types if touching model code
-npm run tactica
+# Lean proofs must stay checked (pinned toolchain in lean-toolchain)
+npm run verify
 
-# Typecheck
-npx tsc --noEmit
-
-# Lint
-npx eslint src/
+# Pantogram runtime must stay runnable (dependency-free ESM)
+node ground-demo.mjs
+node session.js example-session.pntg
 ```
 
-This directory is primarily markdown, but if you add TypeScript code (parser, topology builder), follow the same verification.
+This repo is markdown + Lean + dependency-free JS. There is no tsc/eslint
+layer; if you add TypeScript, reintroduce one deliberately.
 
 ---
 

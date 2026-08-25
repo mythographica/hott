@@ -141,8 +141,14 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Dependencies (pantogram tooling is dependency-free; nothing to install)
+node_modules/
+
 # Local archive — process documentation, not for publication
 archive/
 
 # Session topology — mood data is sensitive and session-local
 .session.pntg
+
+# Lean build artifacts
+.lake/
